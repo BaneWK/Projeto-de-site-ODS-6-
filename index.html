@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>H2O-Info - Monitoramento Inteligente</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- TELA DE AUTENTICAÇÃO (LOGIN/CADASTRO) -->
+    <div id="auth-screen" class="auth-container">
+        <div class="auth-card">
+            <h2 id="auth-title">Criar Conta (ODS 6)</h2>
+            <p class="auth-subtitle">Plataforma H2O-Info - UNIP</p>
+            <form id="auth-form">
+                <div class="form-group">
+                    <label for="user-email">E-mail</label>
+                    <input type="email" id="user-email" required placeholder="seu@email.com">
+                </div>
+                <div class="form-group">
+                    <label for="user-password">Senha</label>
+                    <input type="password" id="user-password" required placeholder="••••••••">
+                </div>
+                <button type="submit" id="auth-btn" class="btn-primary">Cadastrar e Entrar</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- TELA PRINCIPAL (SISTEMA APÓS LOGIN) -->
+    <div id="main-system" class="hidden">
+        <!-- CABEÇALHO DA PLATAFORMA -->
+        <header class="main-header">
+            <div class="logo" onclick="goHome()">
+                <span class="icon">💧</span> <strong>H2O-Info</strong>
+            </div>
+            <nav class="nav-menu">
+                <button class="nav-link active" onclick="switchSection('dashboard')">Início</button>
+                <a href="calculadora.html" class="nav-link">Calculadora Hídrica</a>
+                <a href="quiz.html" class="nav-link">Quiz Educativo</a>
+                <button class="nav-link" onclick="switchSection('biografia')">Fontes & Dados</button>
+                <button class="nav-link" onclick="switchSection('feedback')">Feedback</button>
+            </nav>
+            <div class="user-profile-container" id="user-profile-container">
+                <!-- Conteúdo dinâmico via JS -->
+            </div>
+        </header>
+
+        <main class="content-container">
+            <!-- SEÇÃO: DASHBOARD -->
+            <section id="sec-dashboard" class="content-section">
+                <div class="section-header">
+                    <h2>Consumo de Água em São Paulo</h2>
+                    <p>Dados históricos consolidados dos últimos 10 anos.</p>
+                </div>
+
+                <div class="filter-box">
+                    <label for="region-select"><strong>Selecionar Região:</strong></label>
+                    <select id="region-select" onchange="updateChart()">
+                        <option value="centro">Zona Central</option>
+                        <option value="norte">Zona Norte</option>
+                        <option value="sul">Zona Sul</option>
+                        <option value="leste">Zona Leste</option>
+                        <option value="oeste">Zona Oeste</option>
+                        <option value="metropolitana">Grande São Paulo</option>
+                    </select>
+                </div>
+
+                <!-- GRÁFICO HISTÓRICO CUSTOMIZADO -->
+                <div class="chart-wrapper">
+                    <div class="chart-y-axis">
+                        <span>150L</span>
+                        <span>100L</span>
+                        <span>50L</span>
+                        <span>0L</span>
+                    </div>
+                    <div class="chart-area" id="chart-bars">
+                        <!-- Barras renderizadas dinamicamente via JS -->
+                    </div>
+                </div>
+                <div class="chart-legend">
+                    <p>* Valores médios diários (em Litros) consumidos por ano.</p>
+                </div>
+            </section>
+
+            <!-- SEÇÃO: BIOGRAFIA E FONTES -->
+            <section id="sec-biografia" class="content-section hidden">
+                <h2>Bibliografia e Origem dos Dados</h2>
+                <div class="card-info">
+                    <p>Os dados de consumo e indicadores de qualidade hídrica exibidos nesta plataforma provêm de relatórios oficiais e bancos de dados públicos abertos das seguintes instituições:</p>
+                    <ul>
+                        <li><strong>SABESP</strong> (Companhia de Saneamento Básico do Estado de São Paulo) - Relatórios Anuais de Sustentabilidade e Consumo por Região Metropolitana.</li>
+                        <li><strong>ARSESP</strong> (Agência Reguladora de Serviços Públicos do Estado de São Paulo) - Informações Tarifárias e Relatórios de Fiscalização de Abastecimento.</li>
+                        <li><strong>SNIS</strong> (Sistema Nacional de Informações sobre Saneamento) - Diagnóstico dos Serviços de Água e Esgoto do Estado de São Paulo.</li>
+                        <li><strong>ONU Brasil</strong> - Indicadores de monitoramento de metas do Objetivo de Desenvolvimento Sustentável 6 (ODS 6: Água Potável e Saneamento).</li>
+                    </ul>
+                </div>
+            </section>
+
+            <!-- SEÇÃO: FEEDBACK -->
+            <section id="sec-feedback" class="content-section hidden">
+                <h2>Enviar Feedback do Sistema</h2>
+                <p>Sua opinião ajuda a aprimorar as métricas de impacto socioambiental do projeto UNIP.</p>
+                <form action="https://formspree.io/f/mbdwvgea" method="POST" class="feedback-form">
+                    <input type="hidden" name="_next" value="http://localhost:5500/index.html">
+                    <input type="hidden" name="_subject" value="Novo Feedback - Plataforma H2O-Info">
+                   
+                    <div class="form-group">
+                        <label for="feed-name">Nome Completo</label>
+                        <input type="text" name="name" id="feed-name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="feed-message">Sua Mensagem / Crítica / Sugestão</label>
+                        <textarea name="message" id="feed-message" rows="6" required placeholder="Como foi sua experiência com os dados e ferramentas do portal?"></textarea>
+                    </div>
+                    <button type="submit" class="btn-primary">Enviar Mensagem por E-mail</button>
+                </form>
+            </section>
+        </main>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

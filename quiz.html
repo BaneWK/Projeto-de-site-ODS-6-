@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quiz do Consumo Consciente - H2O-Info</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header class="main-header">
+        <div class="logo" onclick="goHome()">
+            <span class="icon">💧</span> <strong>H2O-Info</strong>
+        </div>
+        <nav class="nav-menu">
+            <a href="index.html" class="nav-link">Quiz Educativo</a>
+        </nav>
+        <div class="user-profile-container" id="user-profile-container">
+            <!-- Conteúdo dinâmico via JS -->
+        </div>
+    </header>
+
+    <main class="content-container">
+        <section class="content-section">
+            <div id="quiz-intro">
+                <h2>Quiz Educativo: Consumo Consciente de Água</h2>
+                <p>Teste seus conhecimentos com 15 perguntas fundamentais alinhadas com a ODS 6 da ONU.</p>
+                <button onclick="startQuiz()" class="btn-primary">Iniciar Quiz</button>
+            </div>
+
+            <div id="quiz-game" class="hidden">
+                <div class="quiz-progress">
+                    <span>Pergunta <span id="current-q-num">1</span> de 15</span>
+                    <div class="progress-bar"><div id="progress-fill"></div></div>
+                </div>
+               
+                <div class="quiz-card">
+                    <h3 id="question-text">Texto da Pergunta Aqui?</h3>
+                    <div id="options-container" class="options-grid">
+                        <!-- Alternativas injetadas pelo JS -->
+                    </div>
+                </div>
+            </div>
+
+            <div id="quiz-results" class="result-box hidden">
+                <h2>Resultado do Quiz</h2>
+                <p>Você acertou <strong id="quiz-score">0</strong> de 15 perguntas!</p>
+                <div id="quiz-feedback-text"></div>
+                <div id="quiz-detailed-results"></div>
+                <button onclick="location.reload()" class="btn-primary" style="margin-top: 20px;">Refazer Quiz</button>
+            </div>
+        </section>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>

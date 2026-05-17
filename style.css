@@ -1,0 +1,52 @@
+/* NOVOS ESTILOS PARA PERFIL E QUIZ */
+.user-profile-container {
+    position: relative;
+}
+
+.user-profile {
+    cursor: pointer;
+    padding: 8px 12px;
+    border-radius: 20px;
+    background: var(--background-gray);
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    font-weight: 500;
+}
+
+.profile-menu {
+    position: absolute;
+    top: 100%;
+    right: 0;
+    background: var(--card-white);
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    min-width: 180px;
+    z-index: 1000;
+    padding: 10px;
+}
+
+.profile-menu div { padding: 8px 0; font-size: 0.9rem; color: var(--text-dark); }
+
+.profile-menu.hidden { display: none; }
+
+.btn-option {
+    background: var(--background-gray);
+    border: 2px solid var(--border-color);
+    padding: 12px;
+    border-radius: 8px;
+    cursor: pointer;
+    width: 100%;
+    text-align: left;
+    margin-bottom: 10px;
+    transition: all 0.2s;
+}
+
+.btn-option:hover { background: var(--light-blue); border-color: var(--primary-blue); }
+
+.options-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+
+.quiz-card { background: var(--background-gray); padding: 25px; border-radius: 12px; }
+
+#quiz-detailed-results { margin-top: 25px; }

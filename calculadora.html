@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora de Pegada Hídrica - H2O-Info</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header class="main-header">
+        <div class="logo" onclick="goHome()">
+            <span class="icon">💧</span> <strong>H2O-Info</strong>
+        </div>
+        <nav class="nav-menu">
+            <a href="index.html" class="nav-link">Calculadora Hídrica</a>
+        </nav>
+        <div class="user-profile-container" id="user-profile-container">
+            <!-- Conteúdo dinâmico via JS -->
+        </div>
+    </header>
+
+    <main class="content-container">
+        <section class="content-section">
+            <h2>Calculadora de Pegada Hídrica Doméstica</h2>
+            <p>Descubra o consumo diário estimado de sua residência preenchendo as atividades usuais abaixo:</p>
+
+            <form id="calc-form" class="calc-box">
+                <div class="form-group">
+                    <label for="calc-banho">Tempo total de banho diário na casa (em minutos):</label>
+                    <input type="number" id="calc-banho" min="0" value="10" required>
+                    <small>Média de consumo: 9 a 12 litros por minuto.</small>
+                </div>
+
+                <div class="form-group">
+                    <label for="calc-torneira">Tempo de torneira aberta (lavar louça/escovar dentes - em minutos):</label>
+                    <input type="number" id="calc-torneira" min="0" value="5" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="calc-descarga">Quantidade de acionamentos de descarga por dia:</label>
+                    <input type="number" id="calc-descarga" min="0" value="4" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="calc-roupa">Quantas vezes utiliza a máquina de lavar roupas por semana?</label>
+                    <input type="number" id="calc-roupa" min="0" value="2" required>
+                </div>
+
+                <button type="button" onclick="calcularConsumo()" class="btn-primary">Calcular Gasto Diário</button>
+            </form>
+
+            <div id="calc-result" class="result-box hidden">
+                <h3>Resultado da sua Pegada:</h3>
+                <p class="total-litros"><span id="litros-num">0</span> Litros / dia</p>
+                <div id="calc-status" class="status-badge"></div>
+            </div>
+        </section>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>
