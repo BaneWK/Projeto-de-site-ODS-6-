@@ -141,7 +141,7 @@ const perguntasQuiz = [
     { q: "Um banho de 15 minutos com registro aberto consome em média quanto?", o: ["30 litros", "60 litros", "135 litros", "300 litros"], a: 2 },
     { q: "O que indica a presença excessiva de coliformes na água?", o: ["Excesso de minerais benéficos", "Contaminação por esgoto doméstico", "Ótima qualidade hídrica", "Ausência de oxigênio"], a: 1 },
     { q: "Qual o impacto do desmatamento de matas ciliares nos rios?", o: ["Melhoria no fluxo da água", "Assoreamento e piora na qualidade", "Aumento de peixes nativos", "Estabilização das margens"], a: 1 },
-    { q: "Qual torneira gotejando pode gastar em média por dia?", o: ["Cerca de 5 litros", "Até 46 litros", "Exatos 100 litros", "Mais de 500 litros"], a: 1 },
+    { q: "Quanto uma torneira gotejando pode gastar em média por dia?", o: ["Cerca de 5 litros", "Até 46 litros", "Exatos 100 litros", "Mais de 500 litros"], a: 1 },
     { q: "Qual o principal agente poluidor urbano dos rios paulistas?", o: ["Esgoto doméstico não tratado", "Resíduos industriais radioativos", "Folhas das árvores", "Óleo extraído do asfalto"], a: 0 },
     { q: "A pegada hídrica mede o quê?", o: ["O volume de água que evaporou no mar", "O consumo direto e indireto de água de um produto/indivíduo", "O tamanho das tubulações urbanas", "A profundidade dos lençóis freáticos"], a: 1 },
     { q: "Qual a função do saneamento básico sustentável?", o: ["Apenas asfalto nas vias", "Garantir água limpa, esgoto e tratamento de resíduos", "Distribuir sacolas plásticas", "Monitorar o ar das metrópoles"], a: 1 },
